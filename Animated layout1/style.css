@@ -1,0 +1,142 @@
+:root{
+    --blueT1: rgba(15, 204, 238, 0.52);
+    --firebrickT2: rgba(178, 34, 34, 0.794);
+    --vertFonce: rgb(4, 167, 104);
+    --grisFonce: rgb(35, 37, 37);
+    --wht: #fff;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#header{
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(to right bottom, var(--blueT1), var(--firebrickT2)) , url(./IMG/pexels-photo-450035.jpeg) no-repeat center center/cover;
+}
+
+#logo{
+    position: absolute;
+    top: 2rem;
+    left: 2.5rem;
+}
+
+.contenu{
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--wht);
+}
+
+.contenu span{
+    display: block;
+    text-transform: uppercase;
+    line-height: 1.7;
+}
+
+.contenu span:nth-child(1){
+    font-size: 4rem;
+    letter-spacing: 1.5rem;
+    animation: animateSpan1 1s ease-in-out;
+}
+
+@keyframes animateSpan1{
+    0%{
+        opacity: 0;
+        transform: translateX(-200px);
+    }
+    
+    80%{
+        transform: translateX(20px)
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.contenu span:nth-child(2){
+    font-size: 1rem;
+    letter-spacing: 1rem;
+     animation: animateSpan2 1s ease-in-out;
+}
+
+@keyframes animateSpan2{
+    0%{
+        opacity: 0;
+        transform: translateX(100px)
+    }
+
+    80%{
+        transform: translateX(-10px)
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.btn{
+    display: inline-block;
+    text-decoration: none;
+    color: var(--grisFonce);
+    background: var(--wht);
+    padding: 1rem 1.5rem;
+    margin-top: 5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    transition: all 0.5s ease;
+    animation:  animatebtn 0.5s ease-in 0.75s backwards;
+}
+
+.btn:hover{
+    letter-spacing: 0.7rem;
+    font-weight: bold;
+}
+
+@keyframes animatebtn {
+    0%{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media(max-width: 768px){
+    .contenu span:nth-child(1){
+        font-size: 3rem;
+    }
+}
+
+@media(max-width: 500px){
+
+    #logo img{
+        width: 50px;
+    }
+
+   .contenu span:nth-child(1){
+        font-size: 0.8rem;
+    } 
+    
+   .contenu span:nth-child(2){
+        font-size: 0.5rem;
+        letter-spacing: 0.5rem;
+    } 
+}
